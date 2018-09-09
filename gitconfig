@@ -1,0 +1,16 @@
+[user]
+name = Maciej Sroka
+email = mck159@gmail.com
+[core]
+editor = /usr/bin/vim
+fileMode = false
+[alias]
+b = !echo "`git rev-parse --abbrev-ref HEAD`   ------"
+copyb = !git rev-parse --abbrev-ref HEAD | tr -d '\n' | pbcopy
+copycommit = !git ll | head -n 1 | tr -d '\n' | pbcopy
+bv = branch -vv
+track = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+tp = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+pras = pull --rebase --autostash
+ll = log --pretty=tformat:"%ce%x09%h%x09%x09%s"
+prasc = "!f() { git pull --rebase --autostash; git checkout -B "$1"; }; f"
